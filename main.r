@@ -6,11 +6,45 @@ year3 <- file$X2016
 year4 <- file$X2019
 emisije <- file$XEMISIJE
 
-#View(emisije)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Nocenja",main="Nocenja stranih turista za 2008 godinu",col="red")
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Nocenja",main="Nocenja stranih turista za 2012 godinu",col="red")
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Nocenja",main="Nocenja stranih turista za 2016 godinu",col="red")
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Nocenja",main="Nocenja stranih turista za 2019 godinu",col="red")
+
+#Save plots to .PNG
+dir.create("png")
+
+png(file="png/plot1.png", width=1920, height=1080)
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2008 godinu",col="red")
+dev.off()
+
+png(file="png/plot2.png", width=1920, height=1080)
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2012 godinu",col="red")
+dev.off()
+
+png(file="png/plot3.png", width=1920, height=1080)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2016 godinu",col="red")
+dev.off()
+
+png(file="png/plot4.png", width=1920, height=1080)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2019 godinu",col="red")
+dev.off()
+
+#Save plots to .JPG
+dir.create("jpg")
+
+jpeg(file="jpg/plot1.jpg", width=1920, height=1080)
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2008 godinu",col="red")
+dev.off()
+
+jpeg(file="jpg/plot2.jpg", width=1920, height=1080)
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2012 godinu",col="red")
+dev.off()
+
+jpeg(file="jpg/plot3.jpg", width=1920, height=1080)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2016 godinu",col="red")
+dev.off()
+
+jpeg(file="jpg/plot4.jpg", width=1920, height=1080)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2019 godinu",col="red")
+dev.off()
+
 
 #Aritmeticka sredina i standarna devijacija
 print(paste("Prosjecno nocenje stranih turista u 2008 godini za navedene sektore iznosila je",mean(year1),"+-",sd(year1)))
@@ -42,7 +76,7 @@ print(paste("Interkvartil za 2012 godinu iznosi: ",IQR(year2)))
 print(paste("Interkvartil za 2016 godinu iznosi: ",IQR(year3)))
 print(paste("Interkvartil za 2019 godinu iznosi: ",IQR(year4)))
 
-library(moments)
+library("moments")
 
 #Mjera asimetrije
 print(paste("Mjera asimetrije za 2008 godinu iznosi: ",skewness(year1)))
