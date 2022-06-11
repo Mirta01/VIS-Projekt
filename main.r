@@ -6,51 +6,49 @@ year3 <- file$X2016
 year4 <- file$X2019
 emisije <- file$XEMISIJE
 
-
 #Save plots to .PNG
 dir.create("png")
 
 png(file="png/plot1.png", width=1920, height=1080)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2008 godinu",col="red")
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
 dev.off()
 
 png(file="png/plot2.png", width=1920, height=1080)
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2012 godinu",col="red")
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
 dev.off()
 
 png(file="png/plot3.png", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2016 godinu",col="red")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
 dev.off()
 
 png(file="png/plot4.png", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2019 godinu",col="red")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
 dev.off()
 
 #Save plots to .JPG
 dir.create("jpg")
 
 jpeg(file="jpg/plot1.jpg", width=1920, height=1080)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2008 godinu",col="red")
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
 dev.off()
 
 jpeg(file="jpg/plot2.jpg", width=1920, height=1080)
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2012 godinu",col="red")
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
 dev.off()
 
 jpeg(file="jpg/plot3.jpg", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2016 godinu",col="red")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
 dev.off()
 
 jpeg(file="jpg/plot4.jpg", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Nocenja stranih turista za 2019 godinu",col="red")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
 dev.off()
 
-
 #Aritmeticka sredina i standarna devijacija
-print(paste("Prosjecno nocenje stranih turista u 2008 godini za navedene sektore iznosila je",mean(year1),"+-",sd(year1)))
-print(paste("Prosjecno nocenje stranih turista u 2012 godini za navedene sektore iznosila je",mean(year2),"+-",sd(year2)))
-print(paste("Prosjecno nocenje stranih turista u 2016 godini za navedene sektore iznosila je",mean(year3),"+-",sd(year3)))
-print(paste("Prosjecno nocenje stranih turista u 2019 godini za navedene sektore iznosila je",mean(year4),"+-",sd(year4)))
+print(paste("Prosjecni racun emisija u zraku 2008. godine za sve navedene vrste iznosila je",mean(year1),"+-",sd(year1)))
+print(paste("Prosjecni racun emisija u zraku 2012. godine za sve navedene vrste iznosila je",mean(year2),"+-",sd(year2)))
+print(paste("Prosjecni racun emisija u zraku 2016. godine za sve navedene vrste iznosila je",mean(year3),"+-",sd(year3)))
+print(paste("Prosjecni racun emisija u zraku 2019. godine za sve navedene vrste iznosila je",mean(year4),"+-",sd(year4)))
 
 #Medijan
 print(paste("Medijan za 2008 godinu iznosi: ",median(year1)))
@@ -91,15 +89,15 @@ print(paste("Zaobljenost za 2016 godinu iznosi: ",kurtosis(year3)))
 print(paste("Zaobljenost za 2019 godinu iznosi: ",kurtosis(year4)))
 
 #Spearan
-print(paste("Spearnom koeficijent nocenja stranih turista za 2008 i 2012: ",cor(year1,year2,method="spearman")))
-print(paste("Spearnom koeficijent nocenja stranih turista za 2008 i 2016:",cor(year1,year3,method="spearman")))
-print(paste("Spearnom koeficijent nocenja stranih turista za 2012 i 2016:",cor(year2,year3,method="spearman")))
-print(paste("Spearnom koeficijent nocenja stranih turista za 2016 i 2019:",cor(year3,year4,method="spearman")))
+print(paste("Spearnom koeficijent svih emisija za 2008 i 2012 iznosi:",cor(year1,year2,method="spearman")))
+print(paste("Spearnom koeficijent svih emisija za 2008 i 2016 iznosi:",cor(year1,year3,method="spearman")))
+print(paste("Spearnom koeficijent svih emisija za 2012 i 2016 iznosi:",cor(year2,year3,method="spearman")))
+print(paste("Spearnom koeficijent svih emisija za 2016 i 2019 iznosi:",cor(year3,year4,method="spearman")))
 
 #Pearsonov
-print(paste("Pearsonov koeficijent nocenja stranih turista za 2008 i 2012:",cor(year1,year2,method="pearson")))
-print(paste("Pearsonov koeficijent nocenja stranih turista za 2008 i 2016:",cor(year1,year3,method="pearson")))
-print(paste("Pearsonov koeficijent nocenja stranih turista za 2012 i 2016:",cor(year2,year3,method="pearson")))
-print(paste("Pearsonov koeficijent nocenja stranih turista za 2016 i 2019:",cor(year3,year4,method="pearson")))
+print(paste("Pearsonov koeficijent svih emisija za 2008 i 2012:",cor(year1,year2,method="pearson")))
+print(paste("Pearsonov koeficijent svih emisija za 2008 i 2016:",cor(year1,year3,method="pearson")))
+print(paste("Pearsonov koeficijent svih emisija za 2012 i 2016:",cor(year2,year3,method="pearson")))
+print(paste("Pearsonov koeficijent svih emisija za 2016 i 2019:",cor(year3,year4,method="pearson")))
 
 
