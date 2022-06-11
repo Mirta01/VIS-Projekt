@@ -4,44 +4,47 @@ year1 <- file$X2008
 year2 <- file$X2012
 year3 <- file$X2016
 year4 <- file$X2019
-emisije <- file$XEMISIJE
+emisije <- file$EMISIJE
+
+plotWidth <- 2440
+plotHeight <- 1080
 
 #Save plots to .PNG
-dir.create("png")
+dir.create("png", showWarnings = FALSE)
 
-png(file="png/plot1.png", width=1920, height=1080)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
+png(file="png/plot1.png", plotWidth, plotHeight)
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
 dev.off()
 
-png(file="png/plot2.png", width=1920, height=1080)
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
+png(file="png/plot2.png", plotWidth, plotHeight)
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
 dev.off()
 
-png(file="png/plot3.png", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
+png(file="png/plot3.png", plotWidth, plotHeight)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
 dev.off()
 
-png(file="png/plot4.png", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
+png(file="png/plot4.png", plotWidth, plotHeight)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
 dev.off()
 
 #Save plots to .JPG
-dir.create("jpg")
+dir.create("jpg", showWarnings = FALSE)
 
-jpeg(file="jpg/plot1.jpg", width=1920, height=1080)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
+jpeg(file="jpg/plot1.jpg", plotWidth, plotHeight)
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
 dev.off()
 
-jpeg(file="jpg/plot2.jpg", width=1920, height=1080)
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
+jpeg(file="jpg/plot2.jpg", plotWidth, plotHeight)
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
 dev.off()
 
-jpeg(file="jpg/plot3.jpg", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
+jpeg(file="jpg/plot3.jpg", plotWidth, plotHeight)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
 dev.off()
 
-jpeg(file="jpg/plot4.jpg", width=1920, height=1080)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Kolicina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
+jpeg(file="jpg/plot4.jpg", plotWidth, plotHeight)
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
 dev.off()
 
 #Aritmeticka sredina i standarna devijacija
