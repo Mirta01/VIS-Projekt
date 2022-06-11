@@ -5,6 +5,7 @@ year1 <- df$X2006
 year2 <- df$X2007
 year3 <- df$X2008
 mjeseci <-df$Mjesec
+
 #View(mjeseci)
 barplot(year1, names.arg = mjeseci,xlab = "Mjeseci", ylab="Nocenja",main="Nocenja stranih turista za 2006 godinu",col="red")
 barplot(year2, names.arg = mjeseci,xlab = "Mjeseci", ylab="Nocenja",main="Nocenja stranih turista za 2007 godinu",col="red")
