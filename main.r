@@ -6,52 +6,52 @@ year3 <- file$X2016
 year4 <- file$X2019
 emisije <- file$EMISIJE
 
-plotWidth <- 2440
-plotHeight <- 1080
+plotWidth <- 1600
+plotHeight <- 600
 
 #Save plots to .PNG
 dir.create("png", showWarnings = FALSE)
 
 png(file="png/plot1.png", plotWidth, plotHeight)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
+barplot(year1, names.arg = paste(emisije),xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2008 godinu",col="green")
 dev.off()
 
 png(file="png/plot2.png", plotWidth, plotHeight)
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2012 godinu",col="green")
 dev.off()
 
 png(file="png/plot3.png", plotWidth, plotHeight)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2016 godinu",col="green")
 dev.off()
 
 png(file="png/plot4.png", plotWidth, plotHeight)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2019 godinu",col="green")
 dev.off()
 
 #Save plots to .JPG
 dir.create("jpg", showWarnings = FALSE)
 
 jpeg(file="jpg/plot1.jpg", plotWidth, plotHeight)
-barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2008 godinu",col="green")
+barplot(year1, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2008 godinu",col="green")
 dev.off()
 
 jpeg(file="jpg/plot2.jpg", plotWidth, plotHeight)
-barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2012 godinu",col="green")
+barplot(year2, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2012 godinu",col="green")
 dev.off()
 
 jpeg(file="jpg/plot3.jpg", plotWidth, plotHeight)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2016 godinu",col="green")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2016 godinu",col="green")
 dev.off()
 
 jpeg(file="jpg/plot4.jpg", plotWidth, plotHeight)
-barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina",main="Racuni svih vrsta emisija u zraku za 2019 godinu",col="green")
+barplot(year3, names.arg = emisije,xlab = "Emisije", ylab="Količina (Mg)",main="Racuni svih vrsta emisija u zrak za 2019 godinu",col="green")
 dev.off()
 
 #Aritmeticka sredina i standarna devijacija
-print(paste("Prosjecni racun emisija u zraku 2008. godine za sve navedene vrste iznosila je",mean(year1),"+-",sd(year1)))
-print(paste("Prosjecni racun emisija u zraku 2012. godine za sve navedene vrste iznosila je",mean(year2),"+-",sd(year2)))
-print(paste("Prosjecni racun emisija u zraku 2016. godine za sve navedene vrste iznosila je",mean(year3),"+-",sd(year3)))
-print(paste("Prosjecni racun emisija u zraku 2019. godine za sve navedene vrste iznosila je",mean(year4),"+-",sd(year4)))
+print(paste("Prosjecni racun emisija u zrak 2008. godine za sve navedene vrste iznosila je",mean(year1),"+-",sd(year1)))
+print(paste("Prosjecni racun emisija u zrak 2012. godine za sve navedene vrste iznosila je",mean(year2),"+-",sd(year2)))
+print(paste("Prosjecni racun emisija u zrak 2016. godine za sve navedene vrste iznosila je",mean(year3),"+-",sd(year3)))
+print(paste("Prosjecni racun emisija u zrak 2019. godine za sve navedene vrste iznosila je",mean(year4),"+-",sd(year4)))
 
 #Medijan
 print(paste("Medijan za 2008 godinu iznosi: ",median(year1)))
